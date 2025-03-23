@@ -3,54 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тұсау кесер шақыру</title>
+    <title>Тұсау кесу</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:wght@500&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Playfair Display', serif;
             text-align: center;
-            background: url('https://source.unsplash.com/1600x900/?kazakhstan,tradition') no-repeat center center/cover;
-            color: white;
-        }
-        .container {
-            background: rgba(0, 0, 0, 0.6);
+            background: linear-gradient(to bottom, #dfe9f3, #ffffff);
+            color: #2c3e50;
             padding: 20px;
-            border-radius: 10px;
-            display: inline-block;
-            margin: 50px auto;
         }
-        h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
+        .invitation {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 700px;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #2a5c94;
         }
-        p {
-            font-size: 18px;
-            line-height: 1.6;
+        .header {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1a3b72;
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 20px;
         }
-        .btn {
-            background: gold;
-            color: black;
-            padding: 10px 20px;
+        .guest-name, .date, .location, .rsvp {
             font-size: 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
+            margin: 15px 0;
+        }
+        .poem {
+            font-size: 18px;
+            font-style: italic;
+            margin: 20px 0;
+            line-height: 1.5;
+        }
+        .map {
+            margin: 30px 0;
+        }
+        .timer {
+            font-size: 24px;
+            font-weight: bold;
             margin-top: 20px;
         }
+        .btn {
+            background-color: #1a3b72;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
         .btn:hover {
-            background: darkorange;
+            background-color: #14284a;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 16px;
+            color: #555;
         }
     </style>
+    <script>
+        function getGuestName() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            return name ? decodeURIComponent(name) : 'Құрметті қонақ';
+        }
+
+        function updateCountdown() {
+            const eventDate = new Date("2025-05-18T13:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById("countdown").textContent = `${days} күн ${hours} сағат ${minutes} минут`;
+        }
+
+        window.onload = function() {
+            document.getElementById('guestName').textContent = getGuestName();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        };
+    </script>
 </head>
 <body>
-<div class="container">
-    <h1>Тұсау кесерге шақыру!</h1>
-    <p>Құрметті достар мен туыстар! Біз сіздерді ерекше қазақ дәстүрі - Тұсау кесерге шақырамыз. Кішкентай сәбиіміздің болашағына ақ жол тілеп, алғашқы қадамдарын бірге атап өтейік!</p>
-    <p><strong>Күні:</strong> 10 қараша 2025<br><strong>Уақыты:</strong> 15:00<br><strong>Мекен-жай:</strong> Алматы, Қазақ үйі</p>
-    <a href="#" class="btn">Қатысамын</a>
+<div class="invitation">
+    <h1 class="header">Тұсау кесу тойына шақырамыз!</h1>
+    <p class="guest-name" id="guestName"></p>
+    <p class="poem">
+        Ағайын, дос, жекжаттың басын қосып,<br>
+        Немереге той жасау бізге парыз.<br>
+        Қуанышты күнімізге ағайындар,<br>
+        Бөлісуге баршаңызды шақырамыз.<br><br>
+        Қуанышқа ортақ бар жақынымыз,<br>
+        Артымызда қалуда керемет із.<br>
+        Тәй-тәй басып қадамын нықтамақшы,<br>
+        Райымбек-есімді біздің немереміз.<br><br>
+        Қуаныштан жайнасын әрқашан жүз,<br>
+        Ортақ болып тойлайық сіз бенен біз.<br>
+        Алғашқы қадамдарын жасап жүр,<br>
+        Кішкентай Райымбек батырымыз...
+    </p>
+    <p class="date">Күні: 20 шілде 2025</p>
+    <p class="location">Мекенжайы: Алматы қаласы, Қалқаман-2 ш.а., Сеитов көшесі 12, Сұлтан сарайы мейрамханасы, 2-ші зал.</p>
+
+    <div class="map">
+        <a href="https://2gis.kz/almaty/geo/70000001023455019/76.817431,43.205486"
+           target="_blank" class="btn">
+            Открыть адрес в 2ГИС
+        </a>
+    </div>
+
+
+    <p class="timer">Мерекеге дейін қалған уақыт:</p>
+    <p id="countdown" class="timer"></p>
+
+    <p class="footer">Сіздерді осы ерекше күні күтеміз!</p>
 </div>
 </body>
 </html>

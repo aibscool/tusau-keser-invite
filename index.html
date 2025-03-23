@@ -5,68 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тұсау кесу</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap');
 
         body {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Mulish', sans-serif;
             text-align: center;
-            background: linear-gradient(to bottom, #dfe9f3, #ffffff);
-            color: #2c3e50;
-            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+            padding: 15px;
         }
         .invitation {
             background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            max-width: 700px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
             margin: auto;
-            position: relative;
-            overflow: hidden;
-            border: 3px solid #2a5c94;
+            border: 2px solid #2a5c94;
         }
         .header {
-            font-size: 32px;
-            font-weight: bold;
+            font-size: 24px;
+            font-weight: 600;
             color: #1a3b72;
-            font-family: 'Dancing Script', cursive;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .guest-name, .date, .location, .rsvp {
-            font-size: 20px;
-            margin: 15px 0;
+            font-size: 16px;
+            margin: 10px 0;
         }
         .poem {
-            font-size: 18px;
+            font-size: 14px;
             font-style: italic;
-            margin: 20px 0;
+            margin: 15px 0;
             line-height: 1.5;
         }
         .map {
-            margin: 30px 0;
+            margin: 20px 0;
         }
         .timer {
-            font-size: 24px;
+            font-size: 18px;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 15px;
         }
         .btn {
             background-color: #1a3b72;
             color: white;
-            padding: 12px 24px;
+            padding: 10px 20px;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 6px;
             display: inline-block;
-            margin-top: 15px;
-            font-size: 18px;
+            font-size: 16px;
             transition: background 0.3s;
         }
         .btn:hover {
             background-color: #14284a;
         }
         .footer {
-            margin-top: 30px;
-            font-size: 16px;
+            margin-top: 20px;
+            font-size: 14px;
             color: #555;
         }
     </style>
@@ -78,7 +74,7 @@
         }
 
         function updateCountdown() {
-            const eventDate = new Date("2025-05-18T13:00:00").getTime();
+            const eventDate = new Date("2025-07-20T13:00:00").getTime();
             const now = new Date().getTime();
             const timeLeft = eventDate - now;
 
@@ -99,33 +95,29 @@
 <body>
 <div class="invitation">
     <h1 class="header">Тұсау кесу тойына шақырамыз!</h1>
+    <img src="img/asd.png" style="height: 300px" alt="">
     <p class="guest-name" id="guestName"></p>
     <p class="poem">
         Ағайын, дос, жекжаттың басын қосып,<br>
         Немереге той жасау бізге парыз.<br>
         Қуанышты күнімізге ағайындар,<br>
         Бөлісуге баршаңызды шақырамыз.<br><br>
-        Қуанышқа ортақ бар жақынымыз,<br>
-        Артымызда қалуда керемет із.<br>
         Тәй-тәй басып қадамын нықтамақшы,<br>
         Райымбек-есімді біздің немереміз.<br><br>
         Қуаныштан жайнасын әрқашан жүз,<br>
-        Ортақ болып тойлайық сіз бенен біз.<br>
-        Алғашқы қадамдарын жасап жүр,<br>
-        Кішкентай Райымбек батырымыз...
+        Ортақ болып тойлайық сіз бенен біз...
     </p>
-    <p class="date">Күні: 20 шілде 2025</p>
-    <p class="location">Мекенжайы: Алматы қаласы, Қалқаман-2 ш.а., Сеитов көшесі 12, Сұлтан сарайы мейрамханасы, 2-ші зал.</p>
+    <p class="date">📅 Күні: 20 шілде 2025</p>
+    <p class="location">📍 Алматы, Қалқаман-2, Сеитов к. 12, Сұлтан сарайы, 2-зал.</p>
 
     <div class="map">
         <a href="https://2gis.kz/almaty/geo/70000001023455019/76.817431,43.205486"
            target="_blank" class="btn">
-            Открыть адрес в 2ГИС
+            2ГИС картасын ашу
         </a>
     </div>
 
-
-    <p class="timer">Мерекеге дейін қалған уақыт:</p>
+    <p class="timer">🕒 Мерекеге дейін қалған уақыт:</p>
     <p id="countdown" class="timer"></p>
 
     <p class="footer">Сіздерді осы ерекше күні күтеміз!</p>

@@ -17,7 +17,7 @@ function getGuestNames() {
 }
 
 function updateCountdown() {
-    const eventDate = new Date("2025-07-20T13:00:00").getTime();
+    const eventDate = new Date("2025-05-18T13:00:00").getTime();
     const now = new Date().getTime();
     const timeLeft = eventDate - now;
 

@@ -1,26 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+@font-face {
+    font-family: 'KZPF_Champion';
+    src: url('fonts/KZPF_Champion_Script_Pro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.main-text {
+    font-family: 'KZPF_Champion', serif;
+    line-height: 1.1;
+    font-size: 10vw;
+    color: #caa22d;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
 body {
     font-family: 'Mulish', sans-serif;
     text-align: center;
-    background: #fdfdfd; /* Чисто белый фон */
-    color: #2f4f2f; /* Темно-зеленый цвет текста */
+    background: #fdfdfd;
+    color: #2f4f2f;
     padding: 15px;
 }
 
 .invitation {
     background: white;
-    padding: 25px;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    max-width: 90%;
+    max-width: 600px;
+    width: 90%;
     margin: auto;
-    border: 4px solid #caa22d; /* Золотая рамка */
-}
-
-.header {
-    font-size: 28px;
-    font-weight: 700;
-    color: #2f4f2f; /* Темно-зеленый заголовок */
-    margin-bottom: 20px;
+    border: 4px solid #caa22d;
 }
 
 .guest-name, .date, .location, .rsvp {
@@ -29,49 +42,46 @@ body {
 }
 
 .poem {
-    font-size: 16px;
+    font-size: 22px;
     font-style: italic;
     margin: 20px 0;
     line-height: 1.6;
-    color: #2f4f2f;
-}
+    color: #345b34;
 
-.map {
-    margin: 25px 0;
 }
 
 .timer {
     font-size: 22px;
     font-weight: bold;
-    color: #caa22d; /* Золотой цвет */
+    color: #caa22d;
     margin-top: 20px;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 #countdown {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
-    color: #2f4f2f; /* Темно-зеленый */
-    background: #fff8dc; /* Светлый фон (похож на шампань) */
-    padding: 12px 20px;
+    color: #2f4f2f;
+    background: #fff8dc;
+    padding: 10px 18px;
     display: inline-block;
     border-radius: 8px;
-    border: 2px solid #caa22d; /* Золотая рамка */
+    border: 2px solid #caa22d;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
 }
 
 .btn {
-    background-color: #2f4f2f; /* Глубокий зеленый */
-    color: #fdfdfd; /* Белый текст */
-    padding: 12px 28px;
+    background-color: #2f4f2f;
+    color: #fdfdfd;
+    padding: 12px 24px;
     text-decoration: none;
     border-radius: 8px;
     display: inline-block;
     font-size: 18px;
     font-weight: bold;
     transition: background 0.3s, transform 0.2s;
-    border: 2px solid #caa22d; /* Золотая рамка */
+    border: 2px solid #caa22d;
 }
 
 .btn:hover {
@@ -88,26 +98,144 @@ body {
 
 img.responsive-img {
     width: 100%;
-    max-width: 300px; /* Максимальная ширина */
-    height: auto; /* Автоматическая высота для сохранения пропорций */
+    max-width: 300px;
+    height: auto;
     display: block;
-    margin: 0 auto; /* Центрируем */
+    margin: 0 auto;
 }
 
 .guest-name {
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 28px;
     text-transform: uppercase;
     line-height: 1.5;
+    margin-bottom: 0;
+    margin-top: 0;
+    color: #caa22d;
 }
 
-.raiymbek {
-    font-family: 'Pacifico', cursive;
-    font-size: 56px; /* Крупный шрифт */
-
-    color: #caa22d; /* Золотой цвет */
-    margin-top: 10px;
-    letter-spacing: 2px; /* Разреженные буквы */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+hr {
+    border: none;
+    height: 4px;
+    background: linear-gradient(to right, #caa22d, #e5c100, #caa22d);
+    border-radius: 2px;
+    margin: 60px auto;
+    max-width: 80%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+
+.date {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Mulish', sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    color: #fff;
+    background: linear-gradient(135deg, #caa22d, #8b6f29);
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.date div {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+}
+
+.day {
+    font-size: 30px;
+    color: #fdfdfd;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 15px 25px;
+    border-radius: 50%;
+}
+
+.hour {
+    font-size: 22px;
+    font-style: italic;
+}
+
+.place {
+    font-size: 20px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 10px 18px;
+    border-radius: 8px;
+}
+
+/* === АДАПТИВНОСТЬ === */
+
+/* Для экранов до 768px (планшеты и мобильные) */
+@media (max-width: 768px) {
+    .invitation {
+        padding: 15px;
+    }
+
+    .main-text {
+        font-size: 12vw;
+    }
+
+    .guest-name {
+        font-size: 24px;
+    }
+
+    .raiymbek {
+        font-size: 36px;
+    }
+
+    .poem {
+        font-size: 18px;
+    }
+
+    #countdown {
+        font-size: 20px;
+        padding: 8px 16px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+/* Для экранов до 480px (мобильные устройства) */
+@media (max-width: 480px) {
+    .invitation {
+        padding: 12px;
+    }
+
+    .main-text {
+        font-size: 14vw;
+    }
+
+    .guest-name {
+        font-size: 20px;
+    }
+
+    .raiymbek {
+        font-size: 32px;
+    }
+
+    .poem {
+        font-size: 16px;
+    }
+
+    #countdown {
+        font-size: 18px;
+        padding: 6px 12px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}

@@ -85,3 +85,29 @@ body {
     color: #2f4f2f;
     font-weight: 600;
 }
+
+img.responsive-img {
+    width: 100%;
+    max-width: 300px; /* Максимальная ширина */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    display: block;
+    margin: 0 auto; /* Центрируем */
+}
+
+.guest-name {
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+
+.raiymbek {
+    font-family: 'Pacifico', cursive;
+    font-size: 56px; /* Крупный шрифт */
+
+    color: #caa22d; /* Золотой цвет */
+    margin-top: 10px;
+    letter-spacing: 2px; /* Разреженные буквы */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+

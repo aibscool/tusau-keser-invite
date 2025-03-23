@@ -2,13 +2,17 @@ function getGuestNames() {
     const urlParams = new URLSearchParams(window.location.search);
     const names = urlParams.get('name');
 
-    if (!names) return { text: 'Қонақтар', suffix: 'Сіздерді ұлымыз', footer: 'Сіздерді осы ерекше күні күтеміз!' };
+    if (!names) return {text: 'Қонақтар', suffix: 'Сіздерді ұлымыз', footer: 'Сіздерді осы ерекше күні күтеміз!'};
 
     const decodedNames = decodeURIComponent(names).split(',');
     if (decodedNames.length === 1) {
-        return { text: decodedNames[0], suffix: 'Сізді ұлымыз', footer: 'Сізді осы ерекше күні күтеміз!' };
+        return {text: decodedNames[0], suffix: 'Сізді ұлымыз', footer: 'Сізді осы ерекше күні күтеміз!'};
     } else {
-        return { text: decodedNames.join(' және '), suffix: 'Сіздерді ұлымыз', footer: 'Сіздерді осы ерекше күні күтеміз!' };
+        return {
+            text: decodedNames.join(' және '),
+            suffix: 'Сіздерді ұлымыз',
+            footer: 'Сіздерді осы ерекше күні күтеміз!'
+        };
     }
 }
 
@@ -24,9 +28,10 @@ function updateCountdown() {
     document.getElementById("countdown").textContent = `${days} күн ${hours} сағат ${minutes} минут`;
 }
 
-window.onload = function() {
+window.onload = function () {
     const guestInfo = getGuestNames();
-    document.getElementById('guestName').textContent = `Құрметті ${guestInfo.text}! ${guestInfo.suffix} Райымбек тұсаукесеріне шақырамыз.`;
+    document.getElementById('guestName').innerHTML = `Құрметті ${guestInfo.text}!<br>${guestInfo.suffix}`;
+
     document.getElementById('footer').textContent = guestInfo.footer;
 
     updateCountdown();

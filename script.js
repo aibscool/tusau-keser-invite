@@ -2,17 +2,13 @@ function getGuestNames() {
     const urlParams = new URLSearchParams(window.location.search);
     const names = urlParams.get('name');
 
-    if (!names) return {text: 'Қонақтар', suffix: 'Сіздерді ұлымыз', footer: 'Сіздерді осы ерекше күні күтеміз!'};
+    if (!names) return { text: 'Қонақтар', suffix: 'Сіздерді немереміз' };
 
     const decodedNames = decodeURIComponent(names).split(',');
     if (decodedNames.length === 1) {
-        return {text: decodedNames[0], suffix: 'Сізді ұлымыз', footer: 'Сізді осы ерекше күні күтеміз!'};
+        return { text: decodedNames[0], suffix: 'Сізді немереміз' };
     } else {
-        return {
-            text: decodedNames.join(' және '),
-            suffix: 'Сіздерді ұлымыз',
-            footer: 'Сіздерді осы ерекше күні күтеміз!'
-        };
+        return { text: decodedNames.join(' және '), suffix: 'Сіздерді немереміз' };
     }
 }
 
@@ -32,7 +28,7 @@ window.onload = function () {
     const guestInfo = getGuestNames();
     document.getElementById('guestName').innerHTML = `Құрметті ${guestInfo.text}!<br>${guestInfo.suffix}`;
 
-    document.getElementById('footer').textContent = guestInfo.footer;
+    document.getElementById('footer').innerHTML = `Той иелері <br> Атасы Қуаныш <br> Апасы Гүлназ`;
 
     updateCountdown();
     setInterval(updateCountdown, 1000);

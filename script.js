@@ -8,7 +8,7 @@ function getGuestNames() {
     if (decodedNames.length === 1) {
         return { text: decodedNames[0], suffix: 'Сізді немереміз' };
     } else {
-        return { text: decodedNames.join(' және '), suffix: 'Сіздерді немереміз' };
+        return { text: decodedNames.join(' - '), suffix: 'Сіздерді немереміз' };
     }
 }
 

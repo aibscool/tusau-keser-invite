@@ -5,83 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Райымбек тұсаукесер</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-
 </head>
 <body>
-<div class="invitation">
-    <img src="img/asd.png" class="responsive-img" alt="Тұсау кесу">
-    <p class="main-text">Райымбек<br> тұсау кесер</p>
-    <hr>
-    <p class="poem">
-        Ағайын, дос, жекжаттың басын қосып,<br>
-        Немереге той жасау бізге парыз.<br>
-        Қуанышты күнімізге ағайындар,<br>
-        Бөлісуге баршаңызды шақырамыз.<br><br>
 
-        Қуанышқа ортақ бар жақынымыз,<br>
-        Артымызда қалуда керемет із.<br>
-        Тәй-тәй басып қадамын нықтамақшы,<br>
-        Райымбек - есімді біздің немереміз.<br><br>
+<!-- Экран приветствия -->
+<div id="welcomeScreen" class="welcome-screen">
+    <h3>Құрметті қонақ,<br>
+        Сізді асыға күтіп отырмыз!<br>
+        Ортақ қуанышымызды бірге бөлісейік!</h3>
+    <h4>Жалғастыру түймесін басып,<br> мерекелік көңіл-күйге бөленіңіз!</h4>
+    <button id="enterButton">Жалғастыру</button>
+</div>
 
-        Қуаныштан жайнасын әрқашан жүз,<br>
-        Ортақ болып тойлайық сіз бенен біз.<br>
-        Алғашқы қадамдарын жасап жүр,<br>
-        Кішкентай Райымбек батырымыз.<br>
-    </p>
-
-    <hr>
-
-    <p class="guest-name" id="guestName"></p>
-    <p class="guest-name">Райымбектің тұсау кесер <br> тойына арналған ақ <br>дастарханымыздың қадірлі <br>қонағы болуға
-        шақырамыз!</p>
-
-    <hr>
-
-    <div class="date">
-        <div class="day">18 мамыр 2025ж</div>
-        <div class="hour">Басталуы сағат 13:00</div>
-        <div class="place">"Сұлтан сарайы" мейрамханасы</div>
-        <div class="address">Алматы қаласы, Қалқаман-2, Сеитов к. 12, 2-ші зал</div>
-    </div>
-
-
-    <div class="map" style="margin: 50px 0 ">
-        <a href="https://2gis.kz/almaty/geo/70000001023455019/76.817431,43.205486"
-           target="_blank" class="btn">
-            2ГИС картасын ашу
-        </a>
-    </div>
-
-    <p class="timer">🕒 Мерекеге дейін қалған уақыт:</p>
-    <p id="countdown" class="timer"></p>
-
-    <div id="confirmationButton" style="text-align: center; margin-top: 20px;"></div>
-
-    <p class="footer" id="footer">Той иелері <br> Атасы Қуаныш <br>Апасы Гүлназ</p>
-
+<!-- Основной контент (изначально скрыт) -->
+<div id="mainContent" class="hidden">
     <audio id="bgMusic" loop>
         <source src="music.mpeg" type="audio/mpeg">
     </audio>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let audio = document.getElementById("bgMusic");
-            let playPromise = audio.play();
+    <div class="invitation">
+        <img src="img/asd.png" class="responsive-img" alt="Тұсау кесу">
+        <p class="main-text">Райымбек<br> тұсау кесер</p>
+        <hr>
+        <p class="poem">
+            Ағайын, дос, жекжаттың басын қосып,<br>
+            Немереге той жасау бізге парыз.<br>
+            Қуанышты күнімізге ағайындар,<br>
+            Бөлісуге баршаңызды шақырамыз.<br><br>
 
-            if (playPromise !== undefined) {
-                playPromise.catch(() => {
-                    document.addEventListener("click", function playAudioOnce() {
-                        audio.play();
-                        document.removeEventListener("click", playAudioOnce);
-                    });
-                });
-            }
-        });
-    </script>
+            Қуанышқа ортақ бар жақынымыз,<br>
+            Артымызда қалуда керемет із.<br>
+            Тәй-тәй басып қадамын нықтамақшы,<br>
+            Райымбек - есімді біздің немереміз.<br><br>
 
+            Қуаныштан жайнасын әрқашан жүз,<br>
+            Ортақ болып тойлайық сіз бенен біз.<br>
+            Алғашқы қадамдарын жасап жүр,<br>
+            Кішкентай Райымбек батырымыз.<br>
+        </p>
 
+        <hr>
+
+        <p class="guest-name" id="guestName"></p>
+        <p class="guest-name">Райымбектің тұсау кесер <br> тойына арналған ақ <br>дастарханымыздың қадірлі <br>қонағы болуға
+            шақырамыз!</p>
+
+        <hr>
+
+        <div class="date">
+            <div class="day">18 мамыр 2025ж</div>
+            <div class="hour">Басталуы сағат 13:00</div>
+            <div class="place">"Сұлтан сарайы" мейрамханасы</div>
+            <div class="address">Алматы қаласы, Қалқаман-2, Сеитов к. 12, 2-ші зал</div>
+        </div>
+
+        <div class="map" style="margin: 50px 0">
+            <a href="https://2gis.kz/almaty/geo/70000001023455019/76.817431,43.205486"
+               target="_blank" class="btn">
+                2ГИС картасын ашу
+            </a>
+        </div>
+
+        <p class="timer">🕒 Мерекеге дейін қалған уақыт:</p>
+        <p id="countdown" class="timer"></p>
+
+        <div id="confirmationButton" style="text-align: center; margin-top: 20px;"></div>
+
+        <p class="footer" id="footer">Той иелері <br> Атасы Қуаныш <br> Апасы Гүлназ</p>
+    </div>
 </div>
+
+<script>
+    document.getElementById("enterButton").addEventListener("click", function () {
+        document.getElementById("welcomeScreen").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+
+        let audio = document.getElementById("bgMusic");
+        audio.play().catch(error => console.log("Автозапуск заблокирован:", error));
+    });
+
+    function updateCountdown() {
+        const countdownElement = document.getElementById("countdown");
+        if (!countdownElement) return;
+
+        const eventDate = new Date("2025-05-18T13:00:00").getTime();
+        const now = Date.now();
+        const timeLeft = eventDate - now;
+
+        if (timeLeft <= 0) {
+            countdownElement.textContent = "Мереке басталды!";
+            clearInterval(countdownInterval);
+            return;
+        }
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+
+        countdownElement.textContent = `${days} күн ${hours} сағат ${minutes} минут`;
+    }
+
+    var countdownInterval = setInterval(updateCountdown, 1000);
+</script>
+
+<style>
+    .welcome-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #enterButton {
+        padding: 15px 30px;
+        font-size: 18px;
+        border: none;
+        background: #2f4f2f;;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 20px;
+        transition: background 0.3s, transform 0.3s;
+        animation: pulse 1.5s infinite;
+    }
+
+    #enterButton:hover {
+        background: #0056b3;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+
 </body>
 </html>

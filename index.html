@@ -60,6 +60,28 @@
     <div id="confirmationButton" style="text-align: center; margin-top: 20px;"></div>
 
     <p class="footer" id="footer">Той иелері <br> Атасы Қуаныш <br>Апасы Гүлназ</p>
+
+    <audio id="bgMusic" loop>
+        <source src="music.mpeg" type="audio/mpeg">
+    </audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let audio = document.getElementById("bgMusic");
+            let playPromise = audio.play();
+
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    document.addEventListener("click", function playAudioOnce() {
+                        audio.play();
+                        document.removeEventListener("click", playAudioOnce);
+                    });
+                });
+            }
+        });
+    </script>
+
+
 </div>
 </body>
 </html>

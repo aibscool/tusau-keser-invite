@@ -34,7 +34,7 @@ function updateCountdown() {
 window.onload = function () {
     const guestInfo = getGuestNames();
     document.getElementById('guestName').innerHTML = `Құрметті ${guestInfo.text}!<br>${guestInfo.suffix}`;
-    document.getElementById('footer').innerHTML = `Той иелері <br> Атасы Қуаныш <br> Апасы Гүлназ`;
+    document.getElementById('footer').innerHTML = `Той иелері: <br> Атасы Қуаныш <br> Апасы Гүлназ`;
 
     const buttonsContainer = document.getElementById('confirmationButton');
     if (buttonsContainer) {

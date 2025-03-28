@@ -41,12 +41,17 @@ body {
     margin: 12px 0;
 }
 
+.poemdiv {
+    display:flex
+}
 .poem {
+
     font-size: 22px;
     font-style: italic;
-    margin: 20px 0;
+    margin: 20px auto;
     line-height: 1.6;
     color: #345b34;
+    text-align: left;
 
 }
 
